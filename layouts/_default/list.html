@@ -1,0 +1,35 @@
+{{ define "main" -}}
+<div class="container">
+    <div class="row">
+        {{ partial "info-category" . }}
+        {{ $categoryTitle := .Title }}
+        <div class="row mb-2">
+            {{ range .Pages.GroupByDate "2006" }}
+                {{ range .Pages }}
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                      <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary-emphasis">{{ $categoryTitle }}</strong>
+                        <h3 class="mb-0">{{ .Title }}</h3>
+                        <div class="mb-1 text-body-tertiary">{{ .Date | time.Format ":date_long" }}</div>
+                        <p class="card-text mb-auto">{{ .Summary }}</p>
+                        <a href="{{ .RelPermalink }}" class="icon-link gap-1 icon-link-hover stretched-link text-decoration-none nav-text-color">
+                          Continue reading
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                        </svg>
+                        </a>
+                      </div>
+                      <div class="col-auto d-none d-lg-block">
+                        {{ with .Resources.GetMatch "image-1.jpg" }}
+                        <img src="{{ .RelPermalink }}" width="200" height="250">
+                        {{ end }}
+                      </div>
+                    </div>
+                </div>
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

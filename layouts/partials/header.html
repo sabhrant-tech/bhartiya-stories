@@ -1,0 +1,12 @@
+<header class="p-3 border-bottom">
+  <div class="container poppins-font-light">
+    <div class="d-flex flex-column flex-md-row align-items-center">
+      <a href="/" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+        {{ $ctx := (dict "logoWidth" "50px" "logoHeight" "50px") }}
+        {{ partial "logo" $ctx }}
+        <span class="fs-4">{{ .Site.Title }}</span>
+      </a>
+      {{ partial "header-menu" . }}
+    </div>
+  </div>
+</header>

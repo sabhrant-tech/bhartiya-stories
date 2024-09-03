@@ -1,0 +1,33 @@
+<div class="info">
+    <h2 class="display-5">{{ .Title }}</h2>
+    <p class="text-muted">{{ .Params.subtitle }}</p>
+    <div class="text-body-tertiary">
+        <span>
+            <small>
+                Categories: {{ if .Params.categories }} {{range .Params.categories}}<a href="{{ "/" | relLangURL }}{{ . | urlize }}" class="category">{{ . }}</a> {{end}}{{end}}
+            </small>
+        </span>
+        <span>&#x2022;</span>
+        <span>
+            {{ if gt .ReadingTime 1 }}
+            {{ .Scratch.Set "readingTime" "mins" }}
+            {{ else }}
+            {{ .Scratch.Set "readingTime" "min" }}
+            {{ end }}
+            <small>{{ .ReadingTime }} {{ .Scratch.Get "readingTime" }} read</small>
+        </span>
+        <span>&#x2022;</span>
+        <span>
+            <small><time datetime="{{ .Date.Format " 2006-01-02T15:04:05Z0700" }}">
+                {{ .Date.Format "January 2, 2006" }}
+            </time></small>
+        </span>
+    </div>
+    <div class="text-body-tertiary">
+        <span>
+            <small>
+                Tags: {{ if .Params.tags }} {{range .Params.tags}}<a class="category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}
+            </small>
+        </span>
+    </div>
+</div>

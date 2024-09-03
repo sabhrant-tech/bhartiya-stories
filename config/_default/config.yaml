@@ -1,0 +1,32 @@
+baseURL: "http://example.org/"
+languageCode: en-us
+title: Bhartiya Stories
+pluralizelisttitles: false
+summaryLength: 10
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+taxonomies:
+  category: categories
+  tag: tags
+
+menus:
+  main:
+  - name: Music
+    pageRef: /music
+    weight: 1
+  - name: Sports
+    pageRef: /sports
+    weight: 2
+  - name: Soldiers
+    pageRef: /soldiers
+    weight: 3
+  - name: Business
+    pageRef: /business
+    weight: 4
+  - name: Places
+    pageRef: /places
+    weight: 5

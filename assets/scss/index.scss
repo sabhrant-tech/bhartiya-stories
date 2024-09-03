@@ -1,0 +1,44 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.scss";
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.poppins-font-light {
+    font-weight: 200;
+}
+.poppins-font-thin {
+    font-weight: 100;
+}
+.nav-text-color {
+    color: #FF7A27;
+}
+.info {
+    padding: 1rem;
+    text-align: center;
+}
+.post {
+    margin-top: 0.5rem;
+}
+.category {
+    color: #FF7A27;
+    text-decoration: none;
+}
+.post a {
+  color: #FF7A27;
+}
+.post h1, h2, h3, h4, h5, h6 {
+  font-weight: 200;
+}
+.post p {
+  font-weight: 200;
+  font-size: 1.1rem;
+}
+// Then add additional custom code here

@@ -1,0 +1,5 @@
+<nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+    {{ range sort .Site.Menus.main.ByName "Weight" }}
+        <a class="me-3 py-2 text-decoration-none nav-text-color" href="{{ .PageRef }}">{{ .Name }}</a>
+    {{ end }}
+</nav>

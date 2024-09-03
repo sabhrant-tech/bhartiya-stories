@@ -1,0 +1,14 @@
+<div class="info">
+    <p class="text-muted">{{ .Params.subtitle }}</p>
+    <div class="row p-1 mb-2 align-items-center justify-content-center text-body-emphasis">
+        <div class="col-lg-6 px-0">
+            <h1 class="display-4">{{ .Title }}</h1>
+            <p class="lead my-3">{{ .Content }}</p>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block">
+            {{ with .Resources.GetMatch "category.jpg" }}
+                <img src="{{ .RelPermalink }}">
+            {{ end }}
+        </div>
+    </div>
+</div>
